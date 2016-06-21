@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="enRoute Example Eval Service Local Test" uid="com.acme.prime.eval.consumer.EvalServiceConsumerLocalTest" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-consoleLog -console
+      </programArgs>
+      <vmArgs>-Xms40m -Xmx384m -Declipse.ignoreApp=true -Dosgi.noShutdown=true
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <vm>
+      <windows include="false">org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8</windows>
+   </vm>
+
+   <plugins>
+      <plugin id="com.acme.prime.eval.api"/>
+      <plugin id="com.acme.prime.eval.consumer"/>
+      <plugin id="com.acme.prime.eval.provider"/>
+      <plugin id="org.apache.felix.gogo.command"/>
+      <plugin id="org.apache.felix.gogo.runtime"/>
+      <plugin id="org.apache.felix.gogo.shell"/>
+      <plugin id="org.eclipse.equinox.console"/>
+      <plugin id="org.eclipse.equinox.ds"/>
+      <plugin id="org.eclipse.equinox.util"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.services"/>
+   </plugins>
+
+   <configurations>
+      <plugin id="com.acme.prime.eval.api" autoStart="false" startLevel="0" />
+      <plugin id="com.acme.prime.eval.consumer" autoStart="true" startLevel="0" />
+      <plugin id="com.acme.prime.eval.provider" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.command" autoStart="false" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.runtime" autoStart="false" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.shell" autoStart="false" startLevel="0" />
+      <plugin id="org.eclipse.equinox.console" autoStart="false" startLevel="0" />
+      <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="1" />
+      <plugin id="org.eclipse.equinox.util" autoStart="false" startLevel="0" />
+      <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
+      <plugin id="org.eclipse.osgi.services" autoStart="false" startLevel="0" />
+   </configurations>
+
+</product>

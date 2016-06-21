@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: ACME
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Import-Package: com.acme.prime.eval.api;version="1.0.0",
- org.osgi.service.component.annotations;version="1.2.0"
+ org.osgi.service.component.annotations;version="1.2.0";resolution:=optional
 Service-Component: OSGI-INF/com.acme.prime.eval.consumer.EvalAsyncConsumer.xml,
  OSGI-INF/com.acme.prime.eval.consumer.EvalConsumer.xml
 Bundle-ActivationPolicy: lazy

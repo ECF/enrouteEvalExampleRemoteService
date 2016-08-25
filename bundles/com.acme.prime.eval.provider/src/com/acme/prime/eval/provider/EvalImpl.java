@@ -9,7 +9,7 @@ import com.acme.prime.eval.api.Eval;
 
 @Component(immediate=true, 
 property = { "service.exported.interfaces=*", 
-		     "service.exported.configs=ecf.generic.server",
+		     "service.exported.configs=ecf.r_osgi.peer.ws",
 		     "ecf.exported.async.interfaces=*"})
 public class EvalImpl implements Eval {
 	Pattern EXPR = Pattern.compile( "\\s*(?<left>\\d+)\\s*(?<op>\\+|-)\\s*(?<right>\\d+)\\s*");

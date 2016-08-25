@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="enRoute Eval Example" uid="com.acme.prime.eval.provider.EvalRemoteServiceHost" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
+<product name="enRoute Eval Example" uid="com.acme.prime.eval.provider.v2.py4j.EvalRemoteServiceHost" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>
@@ -27,9 +27,9 @@
    </vm>
 
    <plugins>
-      <plugin id="com.acme.prime.eval.api" version="1.0.0"/>
+      <plugin id="com.acme.prime.eval.api"/>
+      <plugin id="com.acme.prime.eval.consumer"/>
       <plugin id="com.acme.prime.eval.provider"/>
-      <plugin id="javax.servlet"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.felix.gogo.command"/>
       <plugin id="org.apache.felix.gogo.runtime"/>
@@ -41,38 +41,25 @@
       <plugin id="org.eclipse.ecf.osgi.services.distribution"/>
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin"/>
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy"/>
-      <plugin id="org.eclipse.ecf.provider"/>
-      <plugin id="org.eclipse.ecf.provider.jmdns"/>
-      <plugin id="org.eclipse.ecf.provider.remoteservice"/>
-      <plugin id="org.eclipse.ecf.provider.xmlrpc"/>
+      <plugin id="org.eclipse.ecf.provider.direct"/>
+      <plugin id="org.eclipse.ecf.provider.py4j"/>
       <plugin id="org.eclipse.ecf.remoteservice"/>
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy"/>
-      <plugin id="org.eclipse.ecf.sharedobject"/>
       <plugin id="org.eclipse.equinox.common"/>
       <plugin id="org.eclipse.equinox.concurrent"/>
       <plugin id="org.eclipse.equinox.console"/>
       <plugin id="org.eclipse.equinox.ds"/>
       <plugin id="org.eclipse.equinox.event"/>
-      <plugin id="org.eclipse.equinox.http.jetty"/>
-      <plugin id="org.eclipse.equinox.http.servlet"/>
       <plugin id="org.eclipse.equinox.util"/>
-      <plugin id="org.eclipse.jetty.continuation"/>
-      <plugin id="org.eclipse.jetty.http"/>
-      <plugin id="org.eclipse.jetty.io"/>
-      <plugin id="org.eclipse.jetty.security"/>
-      <plugin id="org.eclipse.jetty.server"/>
-      <plugin id="org.eclipse.jetty.servlet"/>
-      <plugin id="org.eclipse.jetty.util"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.services.remoteserviceadmin"/>
+      <plugin id="org.py4j.osgi.gateway"/>
    </plugins>
 
    <configurations>
       <plugin id="com.acme.prime.eval.api" autoStart="true" startLevel="0" />
       <plugin id="com.acme.prime.eval.provider" autoStart="true" startLevel="0" />
-      <plugin id="javax.servlet" autoStart="false" startLevel="0" />
-      <plugin id="org.apache.commons.logging" autoStart="false" startLevel="0" />
       <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.shell" autoStart="true" startLevel="0" />
@@ -83,28 +70,14 @@
       <plugin id="org.eclipse.ecf.osgi.services.distribution" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider.jmdns" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider.remoteservice" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider.xmlrpc" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.ecf.sharedobject" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
       <plugin id="org.eclipse.equinox.concurrent" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.equinox.console" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.equinox.ds" autoStart="true" startLevel="1" />
       <plugin id="org.eclipse.equinox.event" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.equinox.http.jetty" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.equinox.http.servlet" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.equinox.util" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.continuation" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.http" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.io" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.security" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.server" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.jetty.servlet" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.jetty.util" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.osgi" autoStart="true" startLevel="-1" />
       <plugin id="org.eclipse.osgi.services" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.osgi.services.remoteserviceadmin" autoStart="false" startLevel="0" />

@@ -9,27 +9,21 @@ import com.acme.prime.eval.api.EvalAsync;
 @Component(immediate=true)
 public class EvalAsyncConsumer {
 	
-	@Reference(policy=ReferencePolicy.DYNAMIC)
+	@Reference(policy = ReferencePolicy.DYNAMIC)
 	void bindEval(EvalAsync svc) {
 		System.out.println("EvalAsyncConsumer.v2.bindEval");
-		try {
-			svc.evalAsync("244+244").whenComplete((result,throwable) -> {
-				if (throwable != null)
-					throwable.printStackTrace();
-				else System.out.println("EvalAsyncConsumer.v2 returns="+result);
-			});
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		try {
-			svc.evalBooleanAsync("true||false").whenComplete((result,throwable) -> {
-				if (throwable != null)
-					throwable.printStackTrace();
-				else System.out.println("EvalAsyncConsumer.evalBoolean.v2 returns="+result);
-			});
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
+		svc.evalAsync("244+244").whenComplete((result, throwable) -> {
+			if (throwable != null)
+				throwable.printStackTrace();
+			else
+				System.out.println("EvalAsyncConsumer.v2 returns=" + result);
+		});
+		svc.evalBooleanAsync("true||false").whenComplete((result, throwable) -> {
+			if (throwable != null)
+				throwable.printStackTrace();
+			else
+				System.out.println("EvalAsyncConsumer.evalBoolean.v2 returns=" + result);
+		});
 	}
 	
 	void unbindEval(EvalAsync svc) {

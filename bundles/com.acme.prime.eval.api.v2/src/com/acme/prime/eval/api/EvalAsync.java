@@ -6,8 +6,8 @@ public interface EvalAsync {
 	/**
 	 * Evaluate an expression and return the result.
 	 */
-	CompletableFuture<Double> evalAsync(String expression) throws Exception;
+	CompletableFuture<Double> evalAsync(String expression);
 
-	CompletableFuture<Boolean> evalBooleanAsync(String booleanExpression) throws Exception;
+	CompletableFuture<Boolean> evalBooleanAsync(String booleanExpression);
 	
 }

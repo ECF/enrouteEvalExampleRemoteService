@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="com.acme.prime.eval.provider.Debug">
+   <service>
+      <provide interface="org.osgi.service.remoteserviceadmin.RemoteServiceAdminListener"/>
+   </service>
+   <implementation class="com.acme.prime.eval.provider.Debug"/>
+</scr:component>

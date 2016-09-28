@@ -44,7 +44,6 @@
       <plugin id="org.eclipse.ecf.provider"/>
       <plugin id="org.eclipse.ecf.provider.jmdns"/>
       <plugin id="org.eclipse.ecf.provider.remoteservice"/>
-      <plugin id="org.eclipse.ecf.provider.xmlrpc"/>
       <plugin id="org.eclipse.ecf.remoteservice"/>
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy"/>
       <plugin id="org.eclipse.ecf.sharedobject"/>
@@ -86,7 +85,6 @@
       <plugin id="org.eclipse.ecf.provider" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider.jmdns" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider.remoteservice" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider.xmlrpc" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.sharedobject" autoStart="false" startLevel="0" />

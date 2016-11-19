@@ -5,6 +5,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferencePolicy;
 
 import com.acme.prime.eval.api.Eval;
+import com.acme.prime.eval.api.EvalExpression;
 
 @Component(immediate=true)
 public class EvalConsumer {
@@ -22,6 +23,12 @@ public class EvalConsumer {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		try {
+			System.out.println("EvalConsumer.evalExpression returns="+svc.evalEx(new EvalExpression("222+222")));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 	
 	void unbindEval(Eval svc) {

@@ -10,4 +10,6 @@ public interface EvalAsync {
 
 	CompletableFuture<Boolean> evalBooleanAsync(String booleanExpression);
 	
+	CompletableFuture<Double> evalExAsync(EvalExpression expression);
+
 }

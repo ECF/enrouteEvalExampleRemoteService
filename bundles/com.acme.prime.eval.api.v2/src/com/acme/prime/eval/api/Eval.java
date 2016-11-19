@@ -9,4 +9,7 @@ public interface Eval {
 	double eval(String expression) throws Exception;
 	
 	boolean evalBoolean(String booleanExpression) throws Exception;
+	
+	double evalEx(EvalExpression expression) throws Exception;
+
 }

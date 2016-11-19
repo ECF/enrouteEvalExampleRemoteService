@@ -65,7 +65,7 @@
       <plugin id="ch.ethz.iks.r_osgi.transport.http" autoStart="true" startLevel="0" />
       <plugin id="com.acme.prime.eval.api" autoStart="false" startLevel="0" />
       <plugin id="com.acme.prime.eval.provider" autoStart="false" startLevel="0" />
-      <plugin id="com.acme.prime.eval.provider.v2" autoStart="false" startLevel="0" />
+      <plugin id="com.acme.prime.eval.provider.v2" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
       <plugin id="org.apache.felix.gogo.shell" autoStart="true" startLevel="0" />

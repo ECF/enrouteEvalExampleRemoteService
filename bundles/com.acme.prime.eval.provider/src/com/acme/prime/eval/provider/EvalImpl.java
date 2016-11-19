@@ -6,6 +6,7 @@ import java.util.regex.Pattern;
 import org.osgi.service.component.annotations.Component;
 
 import com.acme.prime.eval.api.Eval;
+import com.acme.prime.eval.api.EvalExpression;
 
 @Component(immediate=true, 
 property = { "service.exported.interfaces=*", 
@@ -28,5 +29,10 @@ public class EvalImpl implements Eval {
 		case "-": return left - right;
 		}
 		return Double.NaN;
+	}
+
+	@Override
+	public double evalEx(EvalExpression expression) throws Exception {
+		return eval(expression.getExpression());
 	}
 }

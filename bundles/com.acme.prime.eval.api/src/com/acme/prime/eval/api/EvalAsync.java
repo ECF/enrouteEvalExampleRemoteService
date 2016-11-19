@@ -8,4 +8,6 @@ public interface EvalAsync {
 	 */
 	CompletableFuture<Double> evalAsync(String expression);
 
+	CompletableFuture<Double> evalExAsync(EvalExpression expression);
+
 }

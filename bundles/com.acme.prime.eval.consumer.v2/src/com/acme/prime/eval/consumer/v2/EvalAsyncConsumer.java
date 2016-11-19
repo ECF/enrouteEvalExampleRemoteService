@@ -5,6 +5,7 @@ import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.component.annotations.ReferencePolicy;
 
 import com.acme.prime.eval.api.EvalAsync;
+import com.acme.prime.eval.api.EvalExpression;
 
 @Component(immediate=true)
 public class EvalAsyncConsumer {
@@ -24,6 +25,13 @@ public class EvalAsyncConsumer {
 			else
 				System.out.println("EvalAsyncConsumer.evalBoolean.v2 returns=" + result);
 		});
+		svc.evalExAsync(new EvalExpression("288+288")).whenComplete((result, throwable) -> {
+			if (throwable != null)
+				throwable.printStackTrace();
+			else
+				System.out.println("EvalAsyncConsumer.v2 expression returns=" + result);
+		});
+
 	}
 	
 	void unbindEval(EvalAsync svc) {

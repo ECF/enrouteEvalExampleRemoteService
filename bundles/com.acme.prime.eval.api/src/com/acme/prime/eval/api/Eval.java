@@ -7,4 +7,6 @@ public interface Eval {
 	 * Evaluate an expression and return the result.
 	 */
 	double eval(String expression) throws Exception;
+	
+	double evalEx(EvalExpression expression) throws Exception;
 }

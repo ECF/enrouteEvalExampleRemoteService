@@ -1,5 +1,9 @@
 package com.acme.prime.eval.provider.v2;
 
+import java.io.ObjectStreamClass;
+import java.util.Hashtable;
+
+import org.eclipse.ecf.core.util.IClassResolver;
 import org.eclipse.ecf.osgi.services.remoteserviceadmin.DebugRemoteServiceAdminListener;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
@@ -9,6 +13,7 @@ import org.osgi.service.component.annotations.Deactivate;
 import org.osgi.service.remoteserviceadmin.RemoteServiceAdminListener;
 
 import com.acme.prime.eval.api.Eval;
+import com.acme.prime.eval.api.EvalExpression;
 import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 @Component(immediate=true, 
@@ -38,17 +43,36 @@ public class EvalImpl implements Eval {
 	}
 	
 	private ServiceRegistration<RemoteServiceAdminListener> reg;
+	private ServiceRegistration<IClassResolver> crReg;
 	
 	@Activate
-	void activate(BundleContext ctx) {
+	void activate(final BundleContext ctx) {
+		IClassResolver cr = new IClassResolver() {
+			@Override
+			public Class<?> resolveClass(ObjectStreamClass desc) throws ClassNotFoundException {
+				return ctx.getBundle().loadClass(desc.getName());
+			}			
+		};
+		Hashtable<String, String> crProps = new Hashtable<String,String>();
+		crProps.put("ch.ethz.iks.r_osgi.transport.http.classResolverProtocol", "http");
+		crReg = ctx.registerService(IClassResolver.class, cr, crProps);
 		reg = ctx.registerService(RemoteServiceAdminListener.class,new DebugRemoteServiceAdminListener(), null);
 	}
 	
 	@Deactivate
 	void deactivate() {
+		if (crReg != null) {
+			crReg.unregister();
+			crReg = null;
+		}
 		if (reg != null) {
 			reg.unregister();
 			reg = null;
 		}
+	}
+
+	@Override
+	public double evalEx(EvalExpression expression) throws Exception {
+		return eval(expression.getExpression());
 	}
 }

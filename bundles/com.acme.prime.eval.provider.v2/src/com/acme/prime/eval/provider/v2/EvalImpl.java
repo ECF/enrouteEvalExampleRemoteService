@@ -18,7 +18,7 @@ import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 @Component(immediate=true, 
 property = { "service.exported.interfaces=*", 
-		     "service.exported.configs=ecf.r_osgi.peer.ws",
+		     "service.exported.configs=ecf.generic.server",
 		     "ecf.exported.async.interfaces=*"})
 public class EvalImpl implements Eval {
 	

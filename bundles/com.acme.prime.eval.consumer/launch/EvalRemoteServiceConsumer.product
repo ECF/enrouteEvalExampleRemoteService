@@ -71,12 +71,12 @@
       <plugin id="org.eclipse.ecf" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.discovery" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.identity" autoStart="false" startLevel="0" />
-      <plugin id="org.eclipse.ecf.osgi.services.distribution" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.ecf.osgi.services.distribution" autoStart="true" startLevel="6" />
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider.jmdns" autoStart="true" startLevel="0" />
-      <plugin id="org.eclipse.ecf.provider.remoteservice" autoStart="false" startLevel="0" />
+      <plugin id="org.eclipse.ecf.provider.remoteservice" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider.xmlrpc" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy" autoStart="false" startLevel="0" />

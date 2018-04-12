@@ -7,3 +7,6 @@ Bundle-Vendor: ACME
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: com.acme.prime.eval.api;version="2.0.0"
+Import-Package: org.osgi.dto;version="1.0.0",
+ org.osgi.framework;version="1.8.0",
+ org.osgi.util.promise

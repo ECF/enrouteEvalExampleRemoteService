@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="enRoute Example Eval Consumer" uid="com.acme.prime.eval.consumer.v2.EvalRemoteServiceConsumer" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
+<product name="enRoute Eval Example" uid="com.acme.prime.eval.provider.v2.generic.product" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>
@@ -9,7 +9,11 @@
    <launcherArgs>
       <programArgs>-consoleLog -console
       </programArgs>
-      <vmArgs>-Xms40m -Xmx384m -Declipse.ignoreApp=true -Dosgi.noShutdown=true
+      <vmArgs>-Xms40m 
+-Xmx384m 
+-Declipse.ignoreApp=true 
+-Dosgi.noShutdown=true
+-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions=ecf.generic.client,ecf.generic.ssl.server,ecf.generic.ssl.client
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>
@@ -26,9 +30,9 @@
    </vm>
 
    <plugins>
-      <plugin id="ch.ethz.iks.r_osgi.remote"/>
       <plugin id="com.acme.prime.eval.api"/>
-      <plugin id="com.acme.prime.eval.consumer.v2"/>
+      <plugin id="com.acme.prime.eval.provider.v2"/>
+      <plugin id="javax.servlet"/>
       <plugin id="org.apache.commons.logging"/>
       <plugin id="org.apache.felix.gogo.command"/>
       <plugin id="org.apache.felix.gogo.runtime"/>
@@ -45,7 +49,7 @@
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy"/>
       <plugin id="org.eclipse.ecf.provider"/>
       <plugin id="org.eclipse.ecf.provider.jmdns"/>
-      <plugin id="org.eclipse.ecf.provider.r_osgi"/>
+      <plugin id="org.eclipse.ecf.provider.remoteservice"/>
       <plugin id="org.eclipse.ecf.remoteservice"/>
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy"/>
       <plugin id="org.eclipse.ecf.sharedobject"/>
@@ -59,14 +63,16 @@
       <plugin id="org.eclipse.osgi.services"/>
       <plugin id="org.eclipse.osgi.services.remoteserviceadmin"/>
       <plugin id="org.eclipse.osgi.util"/>
-      <plugin id="org.objectweb.asm"/>
    </plugins>
 
    <configurations>
+      <plugin id="com.acme.prime.eval.api" autoStart="false" startLevel="0" />
+      <plugin id="com.acme.prime.eval.provider.v2" autoStart="false" startLevel="0" />
+      <plugin id="javax.servlet" autoStart="false" startLevel="0" />
       <plugin id="org.apache.commons.logging" autoStart="false" startLevel="0" />
-      <plugin id="org.apache.felix.gogo.command" autoStart="false" startLevel="0" />
-      <plugin id="org.apache.felix.gogo.runtime" autoStart="false" startLevel="0" />
-      <plugin id="org.apache.felix.gogo.shell" autoStart="false" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.command" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.apache.felix.gogo.shell" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.core.jobs" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.discovery" autoStart="false" startLevel="0" />
@@ -76,6 +82,7 @@
       <plugin id="org.eclipse.ecf.osgi.services.remoteserviceadmin.proxy" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.provider.jmdns" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.ecf.provider.remoteservice" autoStart="true" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.remoteservice.asyncproxy" autoStart="false" startLevel="0" />
       <plugin id="org.eclipse.ecf.sharedobject" autoStart="false" startLevel="0" />

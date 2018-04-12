@@ -8,6 +8,7 @@ import org.osgi.service.component.annotations.Component;
 import com.acme.prime.eval.api.Eval;
 import com.acme.prime.eval.api.EvalExpression;
 
+
 @Component(immediate=true, 
 property = { "service.exported.interfaces=*", 
 		     "service.exported.configs=ecf.generic.server",

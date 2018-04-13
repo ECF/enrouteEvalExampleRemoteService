@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="EvalRemote Service Host XmlRpc Distribution Provider" uid="com.acme.prime.eval.provider.v2.xmlrpc.product" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
+<product name="EvalRemote Service Host XmlRpc Distribution Provider" uid="com.acme.prime.eval.provider.v2.xmlrpc.product" version="1.1.0.qualifier" useFeatures="false" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>

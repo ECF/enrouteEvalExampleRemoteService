@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="Eval Remote Service Host MQTT Distribution Provider" uid="com.acme.prime.eval.provider.v2.hazelcast.product" version="1.0.0.qualifier" useFeatures="false" includeLaunchers="false">
+<product name="Eval Remote Service Host MQTT Distribution Provider" uid="com.acme.prime.eval.provider.v2.hazelcast.product" version="1.1.0.qualifier" useFeatures="false" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>
@@ -11,6 +11,7 @@
       </programArgs>
       <vmArgs>-Declipse.ignoreApp=true 
 -Dosgi.noShutdown=true
+-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions=ecf.generic.server,ecf.generic.client,ecf.generic.ssl.server,ecf.generic.ssl.client,ecf.jms.mqtt.client
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>

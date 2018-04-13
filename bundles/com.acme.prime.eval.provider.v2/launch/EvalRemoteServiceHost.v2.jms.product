@@ -11,6 +11,7 @@
       </programArgs>
       <vmArgs>-Declipse.ignoreApp=true 
 -Dosgi.noShutdown=true
+-Dorg.eclipse.ecf.osgi.service.remoteserviceadmin.hostcontainerselector.excludeddescriptions=ecf.generic.server,ecf.generic.client,ecf.generic.ssl.server,ecf.generic.ssl.client,ecf.jms.activemq.tcp.client,ecf.jms.activemq.tcp.manager.lb.svchost,ecf.jms.activemq.tcp.lb.server
       </vmArgs>
       <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
       </vmArgsMac>

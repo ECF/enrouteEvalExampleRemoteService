@@ -18,7 +18,7 @@ import com.fathzer.soft.javaluator.DoubleEvaluator;
 
 //"ecf.r_osgi.peer.id=r-osgi://127.0.0.1",
 
-@Component(immediate=true, property = { "service.exported.interfaces=*", "service.intents=osgi.basic", "service.intents=osgi.async"})
+@Component(immediate=true, property = { "service.exported.interfaces=*", "service.exported.intents=osgi.basic", "service.exported.intents=osgi.async"})
 public class EvalImpl implements Eval {
 	
 	private final DoubleEvaluator evaluator;
